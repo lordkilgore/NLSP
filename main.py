@@ -76,7 +76,7 @@ class NLSP:
     
     @staticmethod
     def solve(A, b):
-        if np.linalg.det(A) > 0:
+        if np.linalg.det(A) != 0:
             U, y = NLSP.gaussian(A, b)
             x = NLSP.backsub(U, y)
             return x
