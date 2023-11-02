@@ -67,10 +67,10 @@ class NLSP:
 
             # Gaussian Elimination
             A = np.matmul(L, A)
-            if type(y) != None:
+            if str(type(y)) != "<class 'NoneType'>":
                 y = np.matmul(L, y)
         
-        if type(y) != None:
+        if str(type(y)) != "<class 'NoneType'>":
             return A, y
         else:
             return A
