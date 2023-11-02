@@ -50,12 +50,11 @@ class NLSP:
         n = A.shape[0] - 1
 
         for i in range(n):
-            if i > 0:
-                pass
-
+            # Initialization
             e = np.zeros(n+1)
-            tau = np.zeros(n+1)
             e[i] = 1
+            
+            tau = np.zeros(n+1)
             for k in range(n+1):
                 if k <= i:
                     pass
@@ -63,8 +62,10 @@ class NLSP:
                     tau[k] = A[k][i]
             tau = 1 / A[i][i] * tau
 
+            # Gauss Transform
             L = (np.identity(n + 1) - np.outer(tau, e))
 
+            # Gaussian Elimination
             A = np.matmul(L, A)
             if type(y) != None:
                 y = np.matmul(L, y)
