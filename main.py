@@ -91,4 +91,5 @@ A = np.array([[1, 1, 1, 1, 1],
               [16, 81, 256, 625, 0]])
 b = np.array([2, 1, 4, 2, 1])
 
+# Ax = b
 print(NLSP().solve(A, b))
