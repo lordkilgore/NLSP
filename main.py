@@ -83,3 +83,12 @@ class NLSP:
             return x
         else:
             return f"{A} is singular."
+
+A = np.array([[1, 1, 1, 1, 1],
+              [2, 3, -4, 5, 0],
+              [4, 9, 16, 25, 0],
+              [8, 27, -64, 125, 0],
+              [16, 81, 256, 625, 0]])
+b = np.array([2, 1, 4, 2, 1])
+
+print(NLSP().solve(A, b))
